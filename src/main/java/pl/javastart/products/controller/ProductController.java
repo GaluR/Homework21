@@ -73,11 +73,11 @@ public class ProductController {
 
 
     @RequestMapping("/add")
-    public String add(@RequestParam(defaultValue = "Anonim", required = false) String nazwa, @RequestParam double cena, @RequestParam Category kategoria) {
-        if (StringUtils.isEmpty(kategoria)) {
+    public String add(@RequestParam String nazwa, @RequestParam String cena, @RequestParam Category kategoria) {
+        if (nazwa.isEmpty() || cena.isEmpty()) {
             return "redirect:err.html";
         } else {
-            Product product = new Product(nazwa, cena, kategoria);
+            Product product = new Product(nazwa, Double.parseDouble(cena), kategoria);
             ProductList.getAll().add(product);
             return "redirect:success.html";
         }
