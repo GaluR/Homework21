@@ -10,19 +10,27 @@ Pokaż wszystkie produkty -> Kliknij
 <a href="/products">TUTAJ</a><br/>
 Pokaż artykuły spożywcze -> Kliknij
 <a href="/products?category=FOOD">TUTAJ</a><br/>
-Pokaż inne artykuły -> Kliknij
-<a href="/products?category=OTHERS">TUTAJ</a><br/>
 Pokaż artykuły gospodarstwa domowego -> Kliknij
 <a href="/products?category=ITEMS">TUTAJ</a><br/>
+Pokaż inne artykuły -> Kliknij
+<a href="/products?category=OTHERS">TUTAJ</a><br/>
 
 
-<h1>Dodawanie produktów</h1>
+<h1>Dodawanie produktu</h1>
 
 <form action="/add" method="post">
-    <input type="text" name="nazwa" placeholder="Nazwa">
-    <input type="text" name="cena" placeholder="Cena">
-    <input type="text" name="kategoria" placeholder="Kategoria">
-
+    <label for="nazwa">Nazwa</label>
+    <input type="text" name="nazwa" placeholder="Wprowadź nazwę" id="nazwa">
+    <label for="cena">Cena</label>
+    <input type="text" name="cena" placeholder="Wprowadz cenę" id="cena"><br/>
+    <h3>Kategoria do wyboru: </h3>
+    <input type="radio" name="kategoria" id="FOOD" value="FOOD">
+    <label for="FOOD">Artykuły spożywcze</label><br/>
+    <input type="radio" name="kategoria" value="ITEMS"id="ITEMS">
+    <label for="ITEMS">Artykuły gospodarstwa domowego</label><br/>
+    <input type="radio" name="kategoria" value="OTHERS" id="OTHERS">
+    <label for="OTHERS">Inne</label><br/>
+    <br/>
     <input type="submit" value="Dodaj!">
 </form>
 
