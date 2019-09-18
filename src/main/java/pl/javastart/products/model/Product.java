@@ -1,4 +1,4 @@
-package pl.javastart.products.repository;
+package pl.javastart.products.model;
 
 public class Product {
     private String name;

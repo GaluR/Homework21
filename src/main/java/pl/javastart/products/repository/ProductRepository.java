@@ -1,18 +1,18 @@
 package pl.javastart.products.repository;
 
 import org.springframework.stereotype.Repository;
+import pl.javastart.products.model.Category;
+import pl.javastart.products.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ProductList {
-    private static Product product;
-
+public class ProductRepository {
 
     private static List<Product> products;
 
-    public ProductList() {
+    public ProductRepository() {
         products = new ArrayList<>();
         products.add(new Product("Mleko", 2.59, Category.FOOD));
         products.add(new Product("Kiełbaska", 12.59, Category.FOOD));
@@ -22,21 +22,13 @@ public class ProductList {
 
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public static List<Product> getAll() {
         return products;
     }
 
     @Override
     public String toString() {
-        return "Nazwa produktu: " + product +
+        return "Nazwa produktu: " + products +
                 " Cena: " + products;
     }
 }

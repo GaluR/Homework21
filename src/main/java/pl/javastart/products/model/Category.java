@@ -1,4 +1,4 @@
-package pl.javastart.products.repository;
+package pl.javastart.products.model;
 
 import java.util.List;
 

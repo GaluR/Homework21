@@ -7,7 +7,7 @@
 <body>
 <h1>Strona główna produktów</h1>
 Pokaż wszystkie produkty -> Kliknij
-<a href="/products">TUTAJ</a><br/>
+<a href="/productsall">TUTAJ</a><br/>
 Pokaż artykuły spożywcze -> Kliknij
 <a href="/products?category=FOOD">TUTAJ</a><br/>
 Pokaż artykuły gospodarstwa domowego -> Kliknij
@@ -17,10 +17,9 @@ Pokaż inne artykuły -> Kliknij
 
 
 <h1>Dodawanie produktu</h1>
-
 <form action="/add" method="post">
-    <label for="nazwa">Nazwa</label>
-    <input type="text" name="nazwa" placeholder="Wprowadź nazwę" id="nazwa">
+    <label for="nazwa"`1>Nazwa</label>
+    <input type="text" name="nazwa" placeholder="Wprowadź nazwę" id="nazwa" >
     <label for="cena">Cena</label>
     <input type="text" name="cena" placeholder="Wprowadz cenę" id="cena"><br/>
     <h3>Kategoria do wyboru: </h3>
