@@ -21,8 +21,8 @@ public class ProductController {
 
     @ResponseBody
     @RequestMapping("/products")
-    public String showAllProducts(@RequestParam Category category) {
-        List<Product> all = ProductRepository.getAll();
+    public String showAllProducts(@RequestParam(required = false) Category category) {
+        List<Product> all = productRepository.getAll();
         String result = "";
         double sum = 0;
         switch (category) {
@@ -50,17 +50,6 @@ public class ProductController {
         return result + "<br/> Sumaryczna cena produktów z listy to: " + sum;
 
     }
-    @ResponseBody
-    @RequestMapping("/productsall")
-    public String showAllProducts1() {
-        List<Product> all = ProductRepository.getAll();
-        String result = "";
-        for (Product product : all) {
-            result += product.toString() + "<br/>";
-        }
-        return result;
-    }
-
 
     private String getProducts(List<Product> all, String result, Category items) { // metoda wyświetlająca poszczególne produkty z konkretnymi kategoriami
         for (Product product : all) {
@@ -87,7 +76,7 @@ public class ProductController {
             return "redirect:err.html";
         } else {
             Product product = new Product(nazwa, Double.parseDouble(cena), kategoria);
-            ProductRepository.getAll().add(product);
+            productRepository.getAll().add(product);
             return "redirect:success.html";
         }
     }

@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class ProductRepository {
 
-    private static List<Product> products;
+    private List<Product> products;
 
     public ProductRepository() {
         products = new ArrayList<>();
@@ -22,7 +22,7 @@ public class ProductRepository {
 
     }
 
-    public static List<Product> getAll() {
+    public List<Product> getAll() {
         return products;
     }
 
